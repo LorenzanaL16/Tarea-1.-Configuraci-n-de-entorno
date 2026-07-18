@@ -33,5 +33,5 @@ test('a product can be added to the cart', async ({ page }) => {
   await page.getByRole('link', { name: 'Cart', exact: true }).click();
 
   await expect(page).toHaveURL(/cart\.html/);
-  await expect(page.getByText('Samsung galaxy s6')).toBeVisible();
+  await expect(page.getByRole('cell', { name: 'Samsung galaxy s6' })).toBeVisible();
 });
