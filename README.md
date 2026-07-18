@@ -48,6 +48,9 @@ Se abrirá una ventana en http://localhost:9323/ mostrando:
 - **Failed (0)**: Sin fallos
 - **Project**: chromium
 - **Duración**: 4.6s total
+
+### Captura del reporte real
+![Playwright Test Report](assets/test-report.png)
 - **Tests**:
   1. ✅ the home page loads and shows featured products (2.0s)
   2. ✅ a user can open a product detail page (3.0s)
