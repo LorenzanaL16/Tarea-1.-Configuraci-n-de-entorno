@@ -51,22 +51,3 @@ Se abrirá una ventana en http://localhost:9323/ mostrando:
 
 ### Captura del reporte real
 ![Playwright Test Report](assets/test-report.png)
-- **Tests**:
-  1. ✅ the home page loads and shows featured products (2.0s)
-  2. ✅ a user can open a product detail page (3.0s)
-  3. ✅ a product can be added to the cart (3.9s)
-
-## Captura del reporte de tests
-Para ver la captura visual completa de los tests pasando en Playwright Test Report, ejecuta:
-```bash
-npm test
-npx playwright show-report
-```
-
-Se abrirá automáticamente en http://localhost:9323/ mostrando:
-- **"Playwright Test Results"** en el título
-- **"3 passed"** en verde brillante ✅
-- Texto: "Tests ejecutados correctamente en Demoblaze"
-- Botón verde: **"✓ 3/3 tests OK"**
-- Node.js v24.15.0
-- Listado detallado de cada test con duración individual
