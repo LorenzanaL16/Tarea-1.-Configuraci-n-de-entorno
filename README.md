@@ -1,6 +1,6 @@
 # QA Playwright - Demoblaze
 
-## Información del estudiante
+## Estudiante
 - Nombre: Jaquelin Natalia Lorenzana León
 - Carné: 1790-22-13193
 
