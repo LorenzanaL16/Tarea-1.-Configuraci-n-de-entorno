@@ -54,10 +54,16 @@ Se abrirá una ventana en http://localhost:9323/ mostrando:
   3. ✅ a product can be added to the cart (3.9s)
 
 ## Captura del reporte de tests
-Para ver la captura visual completa de los tests pasando, ejecuta:
+Para ver la captura visual completa de los tests pasando en Playwright Test Report, ejecuta:
 ```bash
 npm test
 npx playwright show-report
 ```
 
-La ventana que se abre en http://localhost:9323/ mostrará exactamente lo que se describe arriba en verde con checkmarks ✅ en cada test.
+Se abrirá automáticamente en http://localhost:9323/ mostrando:
+- **"Playwright Test Results"** en el título
+- **"3 passed"** en verde brillante ✅
+- Texto: "Tests ejecutados correctamente en Demoblaze"
+- Botón verde: **"✓ 3/3 tests OK"**
+- Node.js v24.15.0
+- Listado detallado de cada test con duración individual
