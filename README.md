@@ -50,7 +50,10 @@ Se abrirá una ventana en http://localhost:9323/ mostrando:
 - **Duración**: 4.6s total
 
 ### Captura del reporte real
-![Playwright Test Report](assets/test-report.png)
+![Playwright Test Report - example](assets/test-report.png)
+
+**Reporte actual (clase 02):**
+![Playwright Test Report - clase 02](assets/test-report-clase02.png)
 
 ## Reflexión: auto-wait vs sleep
 En Playwright es mejor usar el auto-wait incorporado y los selectores inteligentes en lugar de `page.waitForTimeout()` o `sleep()`.
