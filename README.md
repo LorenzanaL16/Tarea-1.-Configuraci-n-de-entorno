@@ -51,3 +51,9 @@ Se abrirá una ventana en http://localhost:9323/ mostrando:
 
 ### Captura del reporte real
 ![Playwright Test Report](assets/test-report.png)
+
+## Reflexión: auto-wait vs sleep
+En Playwright es mejor usar el auto-wait incorporado y los selectores inteligentes en lugar de `page.waitForTimeout()` o `sleep()`.
+- `expect(...)`, `page.waitForSelector()` y `page.goto(..., { waitUntil: ... })` esperan dinámicamente a que la página o el elemento esté listo.
+- `sleep()` bloquea el test y hace la suite más lenta, además de poder ocultar problemas reales de sincronización.
+- El auto-wait hace las pruebas más estables y reduce el riesgo de falsos negativos.
