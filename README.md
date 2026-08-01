@@ -21,7 +21,11 @@ Esta sección explica cómo ejecutar el proyecto y verificar los tests.
    ```bash
    npm test
    ```
-3. Ver el reporte interactivo de Playwright:
+3. Ejecutar solo los tests de Clase 03 (incluye los 6 tests de clase y los 3 tests de la Tarea 03):
+   ```bash
+   npx playwright test tests/clase03.spec.ts
+   ```
+4. Ver el reporte interactivo de Playwright:
    ```bash
    npx playwright show-report
    ```
