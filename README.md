@@ -11,18 +11,22 @@
 Este proyecto contiene pruebas automatizadas con Playwright para la página de demostración Demoblaze.
 
 ## Ejecución
+Esta sección explica cómo ejecutar el proyecto y verificar los tests.
+
 1. Instalar dependencias:
    ```bash
    npm install
    ```
-2. Ejecutar pruebas:
+2. Ejecutar la suite de Playwright:
    ```bash
    npm test
    ```
-3. Ver el reporte (esto abre automáticamente http://localhost:9323/):
+3. Ver el reporte interactivo de Playwright:
    ```bash
    npx playwright show-report
    ```
+
+> Nota: el `README.md` sirve como el documento de ejecución para la entrega de la tarea.
 
 ## Resultado de pruebas
 Se ejecutó la suite y el resultado fue:
