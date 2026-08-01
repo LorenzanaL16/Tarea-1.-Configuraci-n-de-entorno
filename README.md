@@ -55,6 +55,9 @@ Se abrirá una ventana en http://localhost:9323/ mostrando:
 **Reporte actual (clase 02):**
 ![Playwright Test Report - clase 02](assets/test-report-clase02.png)
 
+**Reporte actual (clase 03):**
+![Playwright Test Report - clase 03](assets/test-report-clase03.png)
+
 ## Reflexión: auto-wait vs sleep
 En Playwright es mejor usar el auto-wait incorporado y los selectores inteligentes en lugar de `page.waitForTimeout()` o `sleep()`.
 - `expect(...)`, `page.waitForSelector()` y `page.goto(..., { waitUntil: ... })` esperan dinámicamente a que la página o el elemento esté listo.
