@@ -72,7 +72,7 @@ El resultado de la ejecución de los tests de la Clase 04 y los retos se muestra
 
 - Imagen representativa del reporte (captura):
 
-![Playwright Test Report - clase 04](assets/test-report.png)
+![Playwright Test Report - clase 04](assets/test-report-clase04.png)
 
 - Abrir reporte interactivo:
 
