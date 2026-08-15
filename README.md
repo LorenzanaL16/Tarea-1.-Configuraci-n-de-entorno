@@ -85,3 +85,34 @@ En Playwright es mejor usar el auto-wait incorporado y los selectores inteligent
 - `expect(...)`, `page.waitForSelector()` y `page.goto(..., { waitUntil: ... })` esperan dinámicamente a que la página o el elemento esté listo.
 - `sleep()` bloquea el test y hace la suite más lenta, además de poder ocultar problemas reales de sincronización.
 - El auto-wait hace las pruebas más estables y reduce el riesgo de falsos negativos.
+
+## Tarea 05 — Instrucciones de entrega
+
+Archivos entregables en esta tarea:
+- [tests/clase05.spec.ts](tests/clase05.spec.ts) — suite con 10 tests base + 3 tests reto (toHaveValue, toBeFocused, toHaveCSS).
+- [casos-de-prueba/tabla-decision-checkout.md](casos-de-prueba/tabla-decision-checkout.md) — tabla de decisión con condiciones y reglas.
+
+Ejecutar solo los tests de la tarea:
+```bash
+npx playwright test tests/clase05.spec.ts
+```
+
+Generar y abrir el reporte HTML (tras ejecutar los tests):
+```bash
+npx playwright show-report
+```
+
+Sugerencia de commit y push (crear branch `tarea05`):
+```bash
+git checkout -b tarea05
+git add tests/clase05.spec.ts casos-de-prueba/tabla-decision-checkout.md README.md
+git commit -m "Tarea05: añadir 3 retos y tabla de decision"
+git push origin tarea05
+```
+
+Entrega en Canvas:
+- Subir enlace de tu repositorio (branch `tarea05` o `main`) con este README como guía de ejecución.
+- Indicar en la entrega que `tests/clase05.spec.ts` contiene los 3 retos solicitados.
+
+Fecha de entrega original: viernes 14 de agosto, 23:59.
+
