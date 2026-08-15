@@ -110,13 +110,8 @@ git add tests/clase05.spec.ts casos-de-prueba/tabla-decision-checkout.md README.
 git commit -m "Tarea05: añadir 3 retos y tabla de decision"
 git push origin tarea05
 ```
-
-Entrega en Canvas:
-- Subir enlace de tu repositorio (branch `tarea05` o `main`) con este README como guía de ejecución.
-- Indicar en la entrega que `tests/clase05.spec.ts` contiene los 3 retos solicitados.
-
 **Reporte actual (clase 05):**
 ![Playwright Test Report - clase 05](assets/test-report-clase05.png)
 
-Fecha de entrega original: viernes 14 de agosto, 23:59.
+
 
