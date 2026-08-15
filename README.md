@@ -74,6 +74,9 @@ El resultado de la ejecución de los tests de la Clase 04 y los retos se muestra
 
 ![Playwright Test Report - clase 04](assets/test-report-clase04.png)
 
+**Reporte actual (clase 05):**
+![Playwright Test Report - clase 05](assets/test-report-clase05.png)
+
 - Abrir reporte interactivo:
 
 ```bash
