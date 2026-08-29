@@ -10,67 +10,112 @@
 ## Descripción
 Este proyecto contiene pruebas automatizadas con Playwright para la página de demostración Demoblaze.
 
-## Ejecución General
+## Ejecución
 Esta sección explica cómo ejecutar el proyecto y verificar los tests.
 
 1. Instalar dependencias:
    ```bash
    npm install
    ```
-2. Ejecutar la suite de Playwright completa:
+2. Ejecutar la suite de Playwright:
    ```bash
    npm test
    ```
-3. Ver el reporte interactivo de Playwright:
+3. Ejecutar solo los tests de Clase 03 (incluye los 6 tests de clase y los 3 tests de la Tarea 03):
+   ```bash
+   npx playwright test tests/clase03.spec.ts
+   ```
+4. Ver el reporte interactivo de Playwright:
    ```bash
    npx playwright show-report
    ```
 
----
+> Nota: el `README.md` sirve como el documento de ejecución para la entrega de la tarea.
 
-## Clase 05 - Casos Base y Retos
+## Resultado de pruebas
+Se ejecutó la suite y el resultado fue:
+- ✅ 3 tests pasando
+- Última ejecución: 3 passed (4.6s)
+- Fecha: 7/17/2026, 8:53:14 PM
+- Total time: 4.6s
 
-### Descripción
-En esta clase se implementaron múltiples casos de prueba incluyendo casos válidos, inválidos, valores en frontera y retos con nuevos matchers de Playwright.
+### Detalle de tests
+1. ✅ **the home page loads and shows featured products** (2.0s) - [example.spec.ts:3](tests/example.spec.ts#L3)
+2. ✅ **a user can open a product detail page** (3.0s) - [example.spec.ts:12](tests/example.spec.ts#L12)
+3. ✅ **a product can be added to the cart** (3.9s) - [example.spec.ts:22](tests/example.spec.ts#L22)
 
-### Tests Clase 05 (10 Tests Base + 3 Tests Reto = 13 Tests Total)
+### Ver el reporte completo
+Para abrir el reporte interactivo de Playwright con la interfaz visual de los resultados:
+```bash
+npx playwright show-report
+```
 
-**10 Tests Base:**
-1. ✅ CE válida: login exitoso
-2. ✅ CE inválida: usuario no existe
-3. ✅ CE inválida: usuario bloqueado
-4. ✅ Valor en frontera: campos vacíos
-5. ✅ Verificar que el inventario tiene exactamente 6 productos
-6. ✅ Verificar el precio con una expresión regular
-7. ✅ Agregar y quitar producto del carrito
-8. ✅ Navegar a detalle del producto
-9. ✅ Filtrar por nombre (A to Z) cambia el primer producto
-10. ✅ Base 10 test
+Se abrirá una ventana en http://localhost:9323/ mostrando:
+- **All (3)**: Los 3 tests ejecutados
+- **Passed (3)**: Los 3 tests pasaron correctamente (con checkmark verde ✅)
+- **Failed (0)**: Sin fallos
+- **Project**: chromium
+- **Duración**: 4.6s total
 
-**3 Tests Reto:**
-- ✅ Reto 1 - toHaveValue(): Ordenar por precio y verificar value y primer precio
-- ✅ Reto 2 - toBeFocused(): El campo de usuario recibe el foco
-- ✅ Reto 3 - toHaveCSS(): Verificar estilos CSS
+### Captura del reporte real
+![Playwright Test Report - example](assets/test-report.png)
 
-### Archivos Entregables Clase 05
-- [tests/clase05.spec.ts](tests/clase05.spec.ts) — Suite con 13 tests (base + retos)
-- [casos-de-prueba/tabla-decision-checkout.md](casos-de-prueba/tabla-decision-checkout.md) — Tabla de decisión
+**Reporte actual (clase 02):**
+![Playwright Test Report - clase 02](assets/test-report-clase02.png)
 
-### Ejecutar tests de Clase 05
+**Reporte actual (clase 03):**
+![Playwright Test Report - clase 03](assets/test-report-clase03.png)
+
+## Reporte de tests — Clase 04
+
+El resultado de la ejecución de los tests de la Clase 04 y los retos se muestra en el reporte interactivo dentro de `playwright-report/`.
+
+- Imagen representativa del reporte (captura):
+
+![Playwright Test Report - clase 04](assets/test-report-clase04.png)
+
+
+- Abrir reporte interactivo:
+
+```bash
+npx playwright show-report
+```
+
+## Reflexión: auto-wait vs sleep
+En Playwright es mejor usar el auto-wait incorporado y los selectores inteligentes en lugar de `page.waitForTimeout()` o `sleep()`.
+- `expect(...)`, `page.waitForSelector()` y `page.goto(..., { waitUntil: ... })` esperan dinámicamente a que la página o el elemento esté listo.
+- `sleep()` bloquea el test y hace la suite más lenta, además de poder ocultar problemas reales de sincronización.
+- El auto-wait hace las pruebas más estables y reduce el riesgo de falsos negativos.
+
+## Tarea 05 — Instrucciones de entrega
+
+Archivos entregables en esta tarea:
+- [tests/clase05.spec.ts](tests/clase05.spec.ts) — suite con 10 tests base + 3 tests reto (toHaveValue, toBeFocused, toHaveCSS).
+- [casos-de-prueba/tabla-decision-checkout.md](casos-de-prueba/tabla-decision-checkout.md) — tabla de decisión con condiciones y reglas.
+
+Ejecutar solo los tests de la tarea:
 ```bash
 npx playwright test tests/clase05.spec.ts
 ```
 
-### Resultado de Pruebas Clase 05
-- ✅ Tests pasando
-- Fecha: 28/8/2026
-- [Reporte de Tests Clase 05](./assets/test-report-clase05.png)
+Generar y abrir el reporte HTML (tras ejecutar los tests):
+```bash
+npx playwright show-report
+```
 
+Sugerencia de commit y push (crear branch `tarea05`):
+```bash
+git checkout -b tarea05
+git add tests/clase05.spec.ts casos-de-prueba/tabla-decision-checkout.md README.md
+git commit -m "Tarea05: añadir 3 retos y tabla de decision"
+git push origin tarea05
+```
+**Reporte actual (clase 05):**
 ![Playwright Test Report - clase 05](assets/test-report-clase05.png)
 
 ---
 
-## Clase 06 - Extender POM a Nuevas Áreas
+## Tarea 06 — Extender POM a Nuevas Áreas
 
 ### Descripción
 En esta clase se extendió el Page Object Model (POM) a nuevas áreas de la aplicación, creando tres nuevos Page Objects y ocho tests (5 base + 3 reto).
@@ -115,16 +160,6 @@ npx playwright test tests/clase06.spec.ts
 - Total time: 4.0s
 
 ![Reporte de Tests Clase 06](./assets/test-report-clase06.png)
-
----
-
-## Reflexión: auto-wait vs sleep
-En Playwright es mejor usar el auto-wait incorporado y los selectores inteligentes en lugar de `page.waitForTimeout()` o `sleep()`.
-- `expect(...)`, `page.waitForSelector()` y `page.goto(..., { waitUntil: ... })` esperan dinámicamente a que la página o el elemento esté listo.
-- `sleep()` bloquea el test y hace la suite más lenta, además de poder ocultar problemas reales de sincronización.
-- El auto-wait hace las pruebas más estables y reduce el riesgo de falsos negativos.
-
-> Nota: el `README.md` sirve como el documento de ejecución para la entrega de las tareas.
 
 
 
