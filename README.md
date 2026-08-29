@@ -32,17 +32,44 @@ Esta sección explica cómo ejecutar el proyecto y verificar los tests.
 
 > Nota: el `README.md` sirve como el documento de ejecución para la entrega de la tarea.
 
-## Resultado de pruebas
-Se ejecutó la suite y el resultado fue:
-- ✅ 3 tests pasando
-- Última ejecución: 3 passed (4.6s)
-- Fecha: 7/17/2026, 8:53:14 PM
-- Total time: 4.6s
+## Clase 06 - Extender POM a Nuevas Áreas
 
-### Detalle de tests
-1. ✅ **the home page loads and shows featured products** (2.0s) - [example.spec.ts:3](tests/example.spec.ts#L3)
-2. ✅ **a user can open a product detail page** (3.0s) - [example.spec.ts:12](tests/example.spec.ts#L12)
-3. ✅ **a product can be added to the cart** (3.9s) - [example.spec.ts:22](tests/example.spec.ts#L22)
+### Descripción
+En esta clase se extendió el Page Object Model (POM) a nuevas áreas de la aplicación, creando tres nuevos Page Objects y ocho tests (5 base + 3 reto).
+
+### Page Objects Creados
+- ✅ `pages/CheckoutPage.ts` - Gestiona el flujo de checkout (formulario + finish)
+- ✅ `pages/MenuPage.ts` - Gestiona el menú hamburguesa y logout
+- ✅ `pages/InventoryPage.ts` - Extendido con método `removeProductByName()`
+- ✅ `pages/CartPage.ts` - Gestiona la página del carrito
+- ✅ `pages/LoginPage.ts` - Page Object de login (reparado)
+
+### Tests Clase 06 (8 Tests - Todos en Verde ✅)
+
+**5 Tests Base:**
+1. ✅ Base 1: Verificar que el inventario se carga correctamente
+2. ✅ Base 2: Agregar producto al carrito
+3. ✅ Base 3: Ir al carrito y verificar producto
+4. ✅ Base 4: Agregar múltiples productos al carrito
+5. ✅ Base 5: Ordenar productos por precio (bajo a alto)
+
+**3 Tests Reto:**
+6. ✅ Reto 1: Completar compra de principio a fin con CheckoutPage
+7. ✅ Reto 2: Probar flujo de logout con MenuPage
+8. ✅ Reto 3: Quitar producto y verificar que badge desaparece
+
+### Ejecutar tests de Clase 06
+```bash
+npx playwright test tests/clase06.spec.ts
+```
+
+### Resultado de Pruebas Clase 06
+- ✅ 8 tests pasando
+- Última ejecución: 8 passed (4.0s)
+- Fecha: 28/8/2026
+- Total time: 4.0s
+
+![Reporte de Tests Clase 06](./assets/clase06-test-report.png)
 
 ### Ver el reporte completo
 Para abrir el reporte interactivo de Playwright con la interfaz visual de los resultados:
