@@ -68,3 +68,4 @@ test.describe('clase 02 - Navegación y esperas en DemoBlaze', () => {
     expect(loadTime).toBeLessThan(10000);
   });
 });
+
