@@ -161,5 +161,49 @@ npx playwright test tests/clase06.spec.ts
 
 ![Reporte de Tests Clase 06](./assets/test-report-clase06.png)
 
+---
+
+## Tarea 07 — Evidencias avanzadas
+
+### Descripción
+Se implementaron 3 retos con técnicas avanzadas de Playwright para documentar el flujo de pruebas con evidencia visual y datos de ejecución:
+
+- ✅ `test.step()` para dividir el caso en pasos claros
+- ✅ `testInfo.attach()` para adjuntar contenido textual como evidencia
+- ✅ `toHaveScreenshot()` para comparar visualmente una pantalla con un baseline
+
+### Archivos entregables Clase 07
+- [tests/clase07.spec.ts](tests/clase07.spec.ts) — suite con los 3 retos
+- [tests/tarea07.spec.ts](tests/tarea07.spec.ts) — versión adicional del entregable
+- [reportes/DR-001.md](reportes/DR-001.md) — defecto simulado documentado
+- [evidencias/clase07](evidencias/clase07) — capturas automáticas de evidencia
+
+### Ejecutar tests de Clase 07
+```bash
+npx playwright test tests/clase07.spec.ts
+```
+
+### Resultado de Pruebas Clase 07
+- ✅ 3 tests pasando
+- Última ejecución: 3 passed (2.7s)
+- Fecha: 11/9/2026
+- Total time: 2.7s
+
+![Reporte de Tests Clase 07](./assets/test-report-clase07.png)
+
+---
+
+## Evidencias visuales finales
+
+### Captura 1: inventario cargado tras login
+![Evidencia 1 - inventario](./evidencias/clase07/t01-inventario.png)
+
+### Captura 2: datos de evidencia del login adjuntados
+![Evidencia 2 - datos login](./evidencias/clase07/t02-datos-login.png)
+
+### Captura 3: screenshot de comparación del inventario
+![Evidencia 3 - screenshot comparado](./tests/clase07.spec.ts-snapshots/inventory-list-chromium-win32.png)
+
+---
 
 
