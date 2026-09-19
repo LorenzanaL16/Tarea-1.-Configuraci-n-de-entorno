@@ -115,37 +115,6 @@ git push origin tarea05
 
 ---
 
-## Tarea 08 - Hooks y suites avanzados
-
-Se implementaron los tres retos solicitados para practicar hooks y configuración avanzada de suites en Playwright:
-
-- `test.describe.configure({ mode: 'serial' })` con una página compartida creada en `beforeAll`.
-- `test.slow()` para el usuario con lentitud artificial.
-- `test.skip()` dinámico según la variable de entorno `SKIP_DYNAMIC_TEST`.
-
-### Archivos entregables
-
-- [helpers/auth.ts](helpers/auth.ts) - helper reutilizable de autenticación.
-- [tests/clase08.spec.ts](tests/clase08.spec.ts) - suite con los 3 tests reto.
-- [documentos/sqa-plan-saucedemo.md](documentos/sqa-plan-saucedemo.md) - SQA Plan mínimo.
-- [assets/test-report-clase08.md](assets/test-report-clase08.md) - evidencia de las ejecuciones.
-
-### Ejecución
-
-```bash
-npx playwright test tests/clase08.spec.ts
-```
-
-Resultado: **3 tests pasando**.
-
-Para verificar el skip dinámico en PowerShell:
-
-```powershell
-$env:SKIP_DYNAMIC_TEST = 'true'; npx playwright test tests/clase08.spec.ts
-```
-
-Resultado: **2 tests pasando y 1 test omitido**.
-
 ## Tarea 06 — Extender POM a Nuevas Áreas
 
 ### Descripción
@@ -236,5 +205,36 @@ npx playwright test tests/clase07.spec.ts
 ![Evidencia 3 - screenshot comparado](./tests/clase07.spec.ts-snapshots/inventory-list-chromium-win32.png)
 
 ---
+
+## Tarea 08 - Hooks y suites avanzados
+
+Se implementaron los tres retos solicitados para practicar hooks y configuración avanzada de suites en Playwright:
+
+- `test.describe.configure({ mode: 'serial' })` con una página compartida creada en `beforeAll`.
+- `test.slow()` para el usuario con lentitud artificial.
+- `test.skip()` dinámico según la variable de entorno `SKIP_DYNAMIC_TEST`.
+
+### Archivos entregables
+
+- [helpers/auth.ts](helpers/auth.ts) - helper reutilizable de autenticación.
+- [tests/clase08.spec.ts](tests/clase08.spec.ts) - suite con los 3 tests reto.
+- [documentos/sqa-plan-saucedemo.md](documentos/sqa-plan-saucedemo.md) - SQA Plan mínimo.
+- [assets/test-report-clase08.md](assets/test-report-clase08.md) - evidencia de las ejecuciones.
+
+### Ejecución
+
+```bash
+npx playwright test tests/clase08.spec.ts
+```
+
+Resultado: **3 tests pasando**.
+
+Para verificar el skip dinámico en PowerShell:
+
+```powershell
+$env:SKIP_DYNAMIC_TEST = 'true'; npx playwright test tests/clase08.spec.ts
+```
+
+Resultado: **2 tests pasando y 1 test omitido**.
 
 
