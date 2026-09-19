@@ -237,4 +237,8 @@ $env:SKIP_DYNAMIC_TEST = 'true'; npx playwright test tests/clase08.spec.ts
 
 Resultado: **2 tests pasando y 1 test omitido**.
 
+### Evidencia manuscrita del SQA Plan
+
+![SQA Plan mínimo escrito a mano](./assets/20260918_232527.jpg)
+
 
