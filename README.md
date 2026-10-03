@@ -241,4 +241,48 @@ Resultado: **2 tests pasando y 1 test omitido**.
 
 ![SQA Plan mínimo escrito a mano](./assets/20260918_232527.jpg)
 
+---
+
+## Tarea 09 - Fixtures avanzados
+
+### Descripción
+En esta tarea se implementaron 3 retos sobre fixtures avanzadas en Playwright:
+
+- Fixture con teardown real, usando una medición de tiempo para validar que el fixture ejecuta limpieza al finalizar.
+- Fixture con alcance `worker`, compartiendo estado entre tests del mismo worker.
+- Uso de `test.use()` con parametrización para ejecutar el mismo test en dos tamaños de pantalla: mobile y desktop.
+
+### Archivos entregables
+- [tests/tarea09.spec.ts](tests/tarea09.spec.ts) — suite con los 3 retos entregados.
+- [assets/test-report-tarea09.png](assets/test-report-tarea09.png) — captura del reporte de Playwright.
+- [assets/test-report-tarea09.md](assets/test-report-tarea09.md) — evidencia textual del resultado.
+
+### Ejecución
+```bash
+npx playwright test tests/tarea09.spec.ts
+```
+
+### Resultado verificado
+Se ejecutaron 5 tests en total y el resultado fue:
+
+- ✅ 5 tests pasando
+- ✅ 0 fallidos
+- ✅ Tiempo total: 1.6s
+
+### Evidencia gráfica
+![Reporte de tests Tarea 09](./assets/test-report-tarea09.png)
+
+### Reflexión y discusión
+1. ¿Cuántas líneas de código ahorraste usando un loop de parametrización?
+   - Se ahorraron varias líneas porque se reutiliza la misma lógica para cada caso y no es necesario duplicar el bloque completo del test.
+
+2. ¿Qué pasa si agrega un 4to usuario al array de usuariosDeLogin?
+   - El test lo toma automáticamente y lo ejecuta sin modificar la lógica principal. Solo basta con agregar un nuevo objeto al array.
+
+3. ¿Cómo podrías leer los datos de prueba desde un archivo CSV externo?
+   - Podría leerse con una librería como `csv-parse` o `papaparse`, cargar los registros y recorrerlos con un loop para crear varias ejecuciones desde un archivo externo.
+
+### Conclusión
+La tarea quedó completada y validada con Playwright. El uso de fixtures avanzadas y la parametrización facilita la reutilización del código, mejora la mantenibilidad y reduce la duplicación en la automatización de pruebas.
+
 
