@@ -285,4 +285,47 @@ Se ejecutaron 5 tests en total y el resultado fue:
 ### Conclusión
 La tarea quedó completada y validada con Playwright. El uso de fixtures avanzadas y la parametrización facilita la reutilización del código, mejora la mantenibilidad y reduce la duplicación en la automatización de pruebas.
 
+---
 
+## Tarea 10 — Tags, soft assertions y multi-browser
+
+### Archivos entregables
+- [playwright.config.ts](playwright.config.ts) — proyectos Chromium, Firefox y WebKit, manteniendo Demoblaze como `baseURL` para las pruebas anteriores.
+- [tests/clase10-smoke.spec.ts](tests/clase10-smoke.spec.ts) — pruebas smoke de Sauce Demo.
+- [tests/clase10-regression.spec.ts](tests/clase10-regression.spec.ts) — pruebas de regresión de Sauce Demo.
+- [tests/tarea10.spec.ts](tests/tarea10.spec.ts) — los tres retos solicitados.
+- [assets/test-report-tarea10.png](assets/test-report-tarea10.png) — captura completa del reporte HTML multi-browser, ordenada después de la evidencia de Tarea 09.
+- [evidencias/tarea10/reporte-multibrowser.png](evidencias/tarea10/reporte-multibrowser.png) — copia de la evidencia en la carpeta de evidencias.
+
+### Técnicas incluidas
+- Tags múltiples (`@smoke`, `@regression` y `@critical`) y ejecución con `--grep` / `--grep-invert`.
+- `expect.soft()` para reportar juntas las verificaciones del nombre, descripción, precio y botón de un producto.
+- Fixture `browserName` para validar que el user agent corresponde al motor Chromium, Firefox o WebKit, sin omitir el test.
+
+### Ejecución
+Desde la raíz del repositorio:
+
+```bash
+npx playwright test tests/clase10-smoke.spec.ts tests/clase10-regression.spec.ts tests/tarea10.spec.ts
+```
+
+Ejecutar los tests etiquetados como regresión:
+
+```bash
+npx playwright test tests/tarea10.spec.ts --grep "@regression"
+```
+
+Excluir específicamente los tests smoke:
+
+```bash
+npx playwright test tests/tarea10.spec.ts --grep-invert "@smoke"
+```
+
+Abrir el reporte HTML después de ejecutar los tests:
+
+```bash
+npx playwright show-report
+```
+
+### Evidencia del reporte multi-browser
+![Reporte HTML de Tarea 10 en Chromium, Firefox y WebKit](./evidencias/tarea10/reporte-multibrowser.png)
